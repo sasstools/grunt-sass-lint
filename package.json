@@ -1,0 +1,35 @@
+{
+  "name": "grunt-sass-lint",
+  "version": "0.1.0-beta.1",
+  "description": "Lint your sass using Node Sass Lint",
+  "license": "MIT",
+  "repository": "sasstools/grunt-sass-lint",
+  "author": {
+    "name": "Micah Godbolt",
+    "email": "micahgodbolt@gmail.com"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "grunt"
+  },
+  "files": [
+    "tasks"
+  ],
+  "keywords": [
+    "gruntplugin",
+    "sass",
+    "scss",
+    "lint"
+  ],
+  "dependencies": {
+    "sass-lint": "0.1.0-beta.1"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-nodeunit": "^0.4.1"
+  }
+}
