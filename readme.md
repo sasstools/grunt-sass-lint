@@ -1,3 +1,9 @@
-A grunt wrapper for the node based [Sass Lint](https://github.com/sasstools/sass-lint)
+# Grunt Sass Lint
 
-`npm install grunt-sass-lint --save-dev`
+[Grunt](http://gruntjs.com/) plugin for [Sass Lint](https://github.com/sasstools/sass-lint).
+
+## Install
+
+```
+npm install grunt-sass-lint --save-dev
+```
