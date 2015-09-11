@@ -6,12 +6,12 @@ module.exports = function (grunt) {
 	grunt.verbose.writeln('\n' + lint.info + '\n');
 
 	grunt.registerMultiTask('sasslint', 'Lint your Sass', function () {
+		var opts = this.options({
+			configFile: ''
+		});
 
-			var opts;
+		var results = lint.lintFiles(this.data[0], opts, opts.configFile);
 
-      var results = lint.lintFiles(this.data[0], opts);
-
-      grunt.log.writeln(lint.format(results));
-
+		grunt.log.writeln(lint.format(results));
 	});
 };
