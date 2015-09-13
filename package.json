@@ -24,7 +24,7 @@
     "lint"
   ],
   "dependencies": {
-    "sass-lint": "~1.0.0"
+    "sass-lint": "~1.2.0"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
