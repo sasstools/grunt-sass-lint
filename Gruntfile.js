@@ -2,6 +2,9 @@
 module.exports = function (grunt) {
 	grunt.initConfig({
 		sasslint: {
+			options: {
+				configFile: 'config/.sass-lint.yml',
+			},
 			test: [
 				'test/fixtures/*.scss'
 			]
