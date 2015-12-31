@@ -12,6 +12,10 @@ module.exports = function (grunt) {
 
 		var results = lint.lintFiles(this.data[0], opts, opts.configFile);
 
-		grunt.log.writeln(lint.format(results, { options: opts }));
+		if(opts['output-file']) {
+			lint.outputResults(results, { options: opts });
+		} else {
+			grunt.log.writeln(lint.format(results, { options: opts }));
+		}
 	});
 };
