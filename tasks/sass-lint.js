@@ -14,7 +14,7 @@ module.exports = function (grunt) {
 			resultFormat = lint.format(results, { options: opts });
 
 		if (failResultCount > 0) {
-			if(opts['outputFile']) {
+			if(opts['output-file']) {
 				lint.outputResults(results, { options: opts });
 			} else {
 				grunt.log.writeln(resultFormat);

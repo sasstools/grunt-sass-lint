@@ -26,7 +26,7 @@ grunt.initConfig({
 		options: {
 			configFile: 'config/.sass-lint.yml',
 			formatter: 'junit',
-			outputFile: 'report.xml'
+			'output-file': 'report.xml'
 		},
 		target: ['location/*.scss']
 	}
@@ -51,7 +51,7 @@ Default: `stylish`
 
 Changes the output format of the generated reports. See https://github.com/eslint/eslint/tree/master/lib/formatters for available formatters.
 
-### outputFile
+### output-file
 
 Type: `string`  
 Default: ``
