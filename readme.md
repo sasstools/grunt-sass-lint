@@ -20,6 +20,19 @@ grunt.initConfig({
 });
 ```
 
+```js
+grunt.initConfig({
+	sasslint: {
+		options: {
+			configFile: 'config/.sass-lint.yml',
+			formatter: 'junit',
+			outputFile: 'report.xml'
+		},
+		target: ['location/*.scss']
+	}
+});
+```
+
 ## Options
 See the [sass-lint options](https://github.com/sasstools/sass-lint#options).
 
@@ -30,3 +43,17 @@ Type: `string`
 Default: ``
 
 Will fallback to `.sass-lint.yml` or the file location set at the `"sasslintConfig"` key inside of `package.json`
+
+### formatter
+
+Type: `string`  
+Default: `stylish`
+
+Changes the output format of the generated reports. See https://github.com/eslint/eslint/tree/master/lib/formatters for available formatters.
+
+### outputFile
+
+Type: `string`  
+Default: ``
+
+Will save the generated output to disk instead of command line.
