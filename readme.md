@@ -8,6 +8,12 @@
 npm install grunt-sass-lint --save-dev
 ```
 
+Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
+
+```
+grunt.loadNpmTasks('grunt-sass-lint');
+```
+
 ## Examples
 ```js
 grunt.initConfig({
