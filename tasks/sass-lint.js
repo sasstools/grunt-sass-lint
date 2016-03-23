@@ -11,12 +11,15 @@ module.exports = function (grunt) {
 			}),
 			results = lint.lintFiles(this.data[0], opts, opts.configFile),
 			failResultCount = lint.resultCount(results),
-			resultFormat = lint.format(results);
-
+			resultFormat = lint.format(results, { options: opts });
 
 		if (failResultCount > 0) {
-			grunt.log.writeln(resultFormat);
-			grunt.fail.warn('');
+			if(opts['output-file']) {
+				lint.outputResults(results, { options: opts });
+			} else {
+				grunt.log.writeln(resultFormat);
+				grunt.fail.warn('');
+			}
 		}
 	});
 };
