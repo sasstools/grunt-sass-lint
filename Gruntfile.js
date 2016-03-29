@@ -3,8 +3,8 @@ module.exports = function (grunt) {
 	grunt.initConfig({
 		sasslint: {
 			options: {
-				configFile: 'config/.sass-lint.yml',
-				formatter:  'junit',
+  			configFile: 'config/.sass-lint.yml',
+  			formatter:  'junit',
   			outputFile: 'report.xml'
 			},
 			test: [
