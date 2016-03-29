@@ -1,6 +1,7 @@
 # Logs
 logs
 *.log
+report.xml
 
 # Runtime data
 pids

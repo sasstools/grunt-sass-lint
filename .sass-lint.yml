@@ -18,7 +18,6 @@ rules:
   placeholder-in-extend: 1
   property-sort-order: 1
   property-spelling: 0
-  nesting-depth: 1
   shorthand: 0
   one-declaration-per-line: 1
   single-line-per-selector: 1

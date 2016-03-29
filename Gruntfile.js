@@ -4,6 +4,8 @@ module.exports = function (grunt) {
 		sasslint: {
 			options: {
 				configFile: 'config/.sass-lint.yml',
+				formatter:  'junit',
+  			outputFile: 'report.xml'
 			},
 			test: [
 				'test/fixtures/*.scss'

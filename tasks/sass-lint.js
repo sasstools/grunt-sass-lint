@@ -13,9 +13,13 @@ module.exports = function (grunt) {
 			failResultCount = lint.resultCount(results),
 			resultFormat = lint.format(results, { options: opts });
 
+
+
 		if (failResultCount > 0) {
-			if(opts['output-file']) {
+			if(opts['outputFile']) {
+				opts['output-file'] = opts['outputFile'];
 				lint.outputResults(results, { options: opts });
+				grunt.fail.warn('');
 			} else {
 				grunt.log.writeln(resultFormat);
 				grunt.fail.warn('');
