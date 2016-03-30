@@ -11,9 +11,9 @@ module.exports = function (grunt) {
 			});
 		var results = [];
 
-		for (var i = 0; i < this.filesSrc.length; i++) {
-			results = results.concat(lint.lintFiles(this.filesSrc[i], opts, opts.configFile));
-		}
+		this.filesSrc.forEach(function (file) {
+			results = results.concat(lint.lintFiles(file, opts, opts.configFile));
+		});
 
 		var failResultCount = lint.resultCount(results);
 		var resultFormat = lint.format(results, { options: opts });
