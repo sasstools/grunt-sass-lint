@@ -8,12 +8,15 @@ module.exports = function (grunt) {
 	grunt.registerMultiTask('sasslint', 'Lint your Sass', function () {
 		var opts = this.options({
 				configFile: ''
-			}),
-			results = lint.lintFiles(this.data[0], opts, opts.configFile),
-			failResultCount = lint.resultCount(results),
-			resultFormat = lint.format(results, { options: opts });
+			});
+		var results = [];
 
+		this.filesSrc.forEach(function (file) {
+			results = results.concat(lint.lintFiles(file, opts, opts.configFile));
+		});
 
+		var failResultCount = lint.resultCount(results);
+		var resultFormat = lint.format(results, { options: opts });
 
 		if (failResultCount > 0) {
 			if(opts['outputFile']) {
