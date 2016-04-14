@@ -7,7 +7,8 @@ module.exports = function (grunt) {
 
 	grunt.registerMultiTask('sasslint', 'Lint your Sass', function () {
 		var opts = this.options({
-				configFile: ''
+				configFile: '',
+				quiet: false // Makes the task not fail on warnings
 			});
 		var results = [];
 
@@ -15,16 +16,19 @@ module.exports = function (grunt) {
 			results = results.concat(lint.lintFiles(file, opts, opts.configFile));
 		});
 
-		var failResultCount = lint.resultCount(results);
+		var warningCount = lint.warningCount(results).count,
+			errorCount = lint.errorCount(results).count;
 		var resultFormat = lint.format(results, { options: opts });
-
-		if (failResultCount > 0) {
+		if (warningCount + errorCount > 0) {
 			if(opts['outputFile']) {
 				opts['output-file'] = opts['outputFile'];
 				lint.outputResults(results, { options: opts });
-				grunt.fail.warn('');
 			} else {
 				grunt.log.writeln(resultFormat);
+			}
+			// Only fail the task if there are errors or the quiet parameter is off
+			if ((warningCount > 0 && !opts.quiet) ||
+				errorCount > 0) {
 				grunt.fail.warn('');
 			}
 		}
