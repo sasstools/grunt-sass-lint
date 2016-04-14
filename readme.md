@@ -32,6 +32,7 @@ grunt.initConfig({
 		options: {
 			configFile: 'config/.sass-lint.yml',
 			formatter: 'junit',
+			quiet: 'true',
 			outputFile: 'report.xml'
 		},
 		target: ['location/*.scss']
@@ -63,3 +64,10 @@ Type: `string`
 Default: ``
 
 Will save the generated output to disk instead of command line.
+
+### quiet
+
+Type: `boolean`
+Default: `false`
+
+Silences any warnings that are generated. If this option is true, any amount of warnings will not fail the task. Errors will still fail the task, regardless of this option
