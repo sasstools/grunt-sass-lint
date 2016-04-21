@@ -15,18 +15,18 @@ module.exports = function (grunt) {
 			results = results.concat(lint.lintFiles(file, opts, opts.configFile));
 		});
 
-		var failResultCount = lint.resultCount(results);
-		var resultFormat = lint.format(results, { options: opts });
+		var resultCount = lint.resultCount(results),
+        errorCount = lint.errorCount(results),
+		    resultFormat = lint.format(results, { options: opts });
 
-		if (failResultCount > 0) {
+		if (resultCount > 0) {
 			if(opts['outputFile']) {
 				opts['output-file'] = opts['outputFile'];
 				lint.outputResults(results, { options: opts });
-				grunt.fail.warn('');
 			} else {
 				grunt.log.writeln(resultFormat);
-				grunt.fail.warn('');
 			}
+      if (errorCount.count > 0) grunt.fail.warn('');
 		}
 	});
 };
