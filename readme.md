@@ -20,6 +20,7 @@ grunt.initConfig({
 	sasslint: {
 		options: {
 			configFile: 'config/.sass-lint.yml',
+			logColor: 'yellow'
 		},
 		target: ['location/\*.scss', 'other_location/\*.scss']
 	}
@@ -63,3 +64,10 @@ Type: `string`
 Default: ``
 
 Will save the generated output to disk instead of command line.
+
+### logColor
+
+Type: `string`
+Default: ``
+
+Will change your console output to a colorful hint. See http://slides.com/joshschumacher/grunt-logging#/5 for all the possible colors
