@@ -24,7 +24,7 @@ module.exports = function (grunt) {
 				opts['output-file'] = opts['outputFile'];
 				lint.outputResults(results, { options: opts });
 			} else {
-				grunt.log.writeln(('logColor' in opts ? resultFormat[opts.logColor] : resultFormat));
+				grunt.log.writeln(!('logColor' in opts) ? resultFormat : resultFormat[opts.logColor]);
 			}
       if (errorCount.count > 0) grunt.fail.warn('');
 		}
