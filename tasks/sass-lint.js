@@ -17,6 +17,7 @@ module.exports = function(grunt) {
 
         var resultCount = lint.resultCount(results),
             errorCount = lint.errorCount(results),
+            warnCount = lint.warningCount(results),
             resultFormat = lint.format(results, { options: opts });
 
         if (resultCount > 0) {
@@ -26,7 +27,10 @@ module.exports = function(grunt) {
             } else {
                 grunt.log.writeln(resultFormat);
             }
-            if (errorCount.count > 0) grunt.fail.warn('');
+
+            if (errorCount.count > 0 || warnCount.count > 0) {
+                grunt.fail.warn('');
+            }
         }
     });
 };
