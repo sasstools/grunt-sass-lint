@@ -1,12 +1,11 @@
 {
-  "name": "grunt-sass-lint",
-  "version": "0.2.1",
-  "description": "Lint your sass using Node Sass Lint",
+  "name": "ioki-grunt-sass-lint",
+  "version": "0.2.2",
+  "description": "Lint your sass using Node Sass Lint forked from sasstools/grunt-sass-lint, published only for local cache server",
   "license": "MIT",
-  "repository": "sasstools/grunt-sass-lint",
+  "repository": "IOKI/grunt-sass-lint",
   "author": {
-    "name": "Micah Godbolt",
-    "email": "micahgodbolt@gmail.com"
+    "name": "Micah Godbolt"
   },
   "engines": {
     "node": ">=0.10.0"
