@@ -7,7 +7,8 @@ module.exports = function (grunt) {
 
 	grunt.registerMultiTask('sasslint', 'Lint your Sass', function () {
 		var opts = this.options({
-				configFile: ''
+				configFile: '',
+				warningsAreErrors: false
 			});
 		var results = [];
 
@@ -16,8 +17,8 @@ module.exports = function (grunt) {
 		});
 
 		var resultCount = lint.resultCount(results),
-        errorCount = lint.errorCount(results),
-		    resultFormat = lint.format(results, { options: opts });
+			errorCount = lint.errorCount(results),
+			resultFormat = lint.format(results, { options: opts });
 
 		if (resultCount > 0) {
 			if(opts['outputFile']) {
@@ -26,7 +27,8 @@ module.exports = function (grunt) {
 			} else {
 				grunt.log.writeln(resultFormat);
 			}
-      if (errorCount.count > 0) grunt.fail.warn('');
+
+			if ((opts.warningsAreErrors ? resultCount : errorCount.count) > 0) grunt.fail.warn('');
 		}
 	});
 };
