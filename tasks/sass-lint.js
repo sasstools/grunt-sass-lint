@@ -12,7 +12,9 @@ module.exports = function (grunt) {
 		var results = [];
 
 		this.filesSrc.forEach(function (file) {
-			results = results.concat(lint.lintFiles(file, opts, opts.configFile));
+			if (grunt.file.isFile(file)) {
+				results = results.concat(lint.lintFiles(file, opts, opts.configFile));
+			}
 		});
 
 		var resultCount = lint.resultCount(results),
