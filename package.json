@@ -1,6 +1,6 @@
 {
   "name": "grunt-sass-lint",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Lint your sass using Node Sass Lint",
   "license": "MIT",
   "repository": "sasstools/grunt-sass-lint",
@@ -24,7 +24,7 @@
     "lint"
   ],
   "dependencies": {
-    "sass-lint": "^1.10.2"
+    "sass-lint": "^1.11.0"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
