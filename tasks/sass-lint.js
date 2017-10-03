@@ -26,7 +26,9 @@ module.exports = function (grunt) {
 			} else {
 				grunt.log.writeln(resultFormat);
 			}
-      if (errorCount.count > 0) grunt.fail.warn('');
+			if (errorCount.count > 0) grunt.fail.warn('');
+		} else {
+			grunt.log.ok(results.length + ' ' + grunt.util.pluralize(results.length, 'file/files') + ' lint free.');
 		}
 	});
 };
