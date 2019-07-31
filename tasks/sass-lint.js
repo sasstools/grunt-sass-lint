@@ -7,6 +7,7 @@ module.exports = function (grunt) {
 
 	grunt.registerMultiTask('sasslint', 'Lint your Sass', function () {
 		var opts = this.options({
+				force: true,
 				configFile: ''
 			});
 		var results = [];
@@ -26,7 +27,10 @@ module.exports = function (grunt) {
 			} else {
 				grunt.log.writeln(resultFormat);
 			}
-      if (errorCount.count > 0) grunt.fail.warn('');
+
+			if(opts.force){
+				if (errorCount.count > 0) grunt.fail.warn('');
+			}
 		}
 	});
 };
